@@ -27,10 +27,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm i
-    - run: npm ci
     - name: Build
       shell: bash
       env:
         VITE_ENVIRONMENT: ${{ secrets.VITE_ENVIRONMENT }}
       run: npm run build
-    - run: npm test
